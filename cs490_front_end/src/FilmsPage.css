@@ -1,0 +1,135 @@
+.field-infos {
+	width: 45%; /* Smaller width */
+	padding: 6px 10px; /* Smaller padding */
+	margin: 4px 0;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	font-size: 16px;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+button {
+	background-color: rgba(20, 26, 106, 0.7);
+	border: none;
+	color: white;
+	padding: 8px 16px; /* Smaller padding */
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.input-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+button:hover {
+	background-color: rgba(42, 46, 98, 0.7);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+table,
+th,
+td {
+	border: 1px solid #ddd;
+}
+
+th {
+	background-color: #424242;
+	color: #fff;
+	padding: 12px 16px;
+}
+
+td {
+	text-align: left;
+	padding: 16px;
+}
+
+tr:nth-child(even) {
+	background-color: #f7f7f7;
+}
+
+.row:hover {
+	cursor: pointer;
+	background-color: #e0e0e0;
+}
+
+.film-card,
+.actor-card {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	border: 2px solid #424242;
+	border-radius: 10px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	z-index: 100;
+	width: 60%;
+	max-width: 600px;
+}
+
+.film-card h2,
+.actor-card h2 {
+	margin-top: 0;
+	font-size: 20px;
+	font-weight: 500;
+	color: #212121;
+}
+
+.film-card p,
+.actor-card p {
+	margin: 10px 0;
+	color: #757575;
+}
+
+.close-button {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: none;
+	border: none;
+	font-size: 20px;
+	color: #757575;
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.close-button:hover {
+	color: #424242;
+}
+
+.rent-input {
+	width: 150px;
+	height: 30px;
+	margin: 0 10px;
+	margin-top: 3px;
+	/* padding: 3px; */
+	font-size: 16px;
+	text-align: center;
+	border-radius: 8px;
+}
+
+.input-button-container {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
