@@ -61,6 +61,22 @@ const FilmsPage = () => {
 				if (data.Exists) {
 					alert("The film has been rented to the customer.");
 					// Add code here to update the database and rent out the film to the customer
+					// Will need to make a POST request to the server to update the database
+					// make a POST request to the server to update the database
+					// fetch(`http://localhost:${port}/api/rent-film`, {
+					//     method: "POST",
+					//     headers: {
+					//         "Content-Type": "application/json",
+					//     },
+					//     body: JSON.stringify({
+					//         film_id: selectedFilm.film_id,
+					//         customer_id: customerId,
+					//     }),
+					// })
+					//     .then((response) => response.json())
+					//     .then((data) => {
+					//         console.log(data);
+					//     });
 				} else {
 					alert("Customer was not found.");
 				}
@@ -198,20 +214,6 @@ const FilmsPage = () => {
 								<td>Special Features:</td>
 								<td>{selectedFilm.special_features}</td>
 							</tr>
-							{/* add a feature that will allow you to rent out that film to a customer. there should be an input box that allows you to enter a customerID. once you type it in, there is a submit button. when you hit the submit button, it will first make an api call that checks if a customer exists. if they do not exist, an alert will pop up and say customer was not found. the api for the user lookup is this: app.get("/api/customer-exists/:customer_id", (req, res) => {
-	const { customer_id } = req.params;
-	const query = `
-      SELECT EXISTS(
-          SELECT 1 
-          FROM customer 
-          WHERE customer_id = ?
-      ) AS 'Exists';
-    `;
-	db.query(query, [customer_id], (err, result) => {
-		if (err) throw err;
-		res.json(result[0]);
-	});
-});*/}
 						</tbody>
 					</table>
 					<div className="input-button-container">
