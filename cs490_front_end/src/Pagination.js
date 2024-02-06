@@ -3,6 +3,11 @@ import "./Pagination.css";
 
 const Pagination = ({ totalFilms, filmsPerPage, paginate, currentPage }) => {
 	const totalPages = Math.ceil(totalFilms / filmsPerPage);
+	console.log("*totalPages: ", totalPages);
+	console.log("*totalFilms: ", totalFilms);
+	console.log("*filmsPerPage: ", filmsPerPage);
+	console.log("*paginate: ", paginate);
+	console.log("*currentPage: ", currentPage);
 	const [inputValue, setInputValue] = useState("");
 
 	const handlePageChange = (newPage) => {
@@ -20,15 +25,7 @@ const Pagination = ({ totalFilms, filmsPerPage, paginate, currentPage }) => {
 	const handleInputChange = (event) => {
 		const value = event.target.value;
 		setInputValue(value);
-		// if (value === "" || /^[0-9\b]+$/.test(value)) {
-		// 	handlePageChange(Number(value));
-		// }
 	};
-
-	// const handleInputChange = (event) => {
-	// 	const value = event.target.value;
-	// 	setInputValue(value);
-	// };
 
 	const handleKeyDown = (event) => {
 		if (event.key === "Enter") {

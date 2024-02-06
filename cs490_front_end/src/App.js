@@ -3,9 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import FilmsPage from "./FilmsPage";
+import CustomerPage from "./CustomerPage";
 
-// import FilmsPage from "./FilmsPage";
-// import CustomerPage from "./CustomerPage";
 import Navigation from "./Navigation";
 
 const App = () => {
@@ -15,6 +14,7 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<LandingPage />} />
 				<Route path="/films" element={<FilmsPage />} />
+				<Route path="/customer" element={<CustomerPage />} />
 			</Routes>
 		</Router>
 	);
