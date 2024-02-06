@@ -61,6 +61,22 @@ const FilmsPage = () => {
 				if (data.Exists) {
 					alert("The film has been rented to the customer.");
 					// Add code here to update the database and rent out the film to the customer
+					// Will need to make a POST request to the server to update the database
+					// make a POST request to the server to update the database
+					// fetch(`http://localhost:${port}/api/rent-film`, {
+					//     method: "POST",
+					//     headers: {
+					//         "Content-Type": "application/json",
+					//     },
+					//     body: JSON.stringify({
+					//         film_id: selectedFilm.film_id,
+					//         customer_id: customerId,
+					//     }),
+					// })
+					//     .then((response) => response.json())
+					//     .then((data) => {
+					//         console.log(data);
+					//     });
 				} else {
 					alert("Customer was not found.");
 				}
