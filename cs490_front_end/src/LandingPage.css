@@ -15,8 +15,8 @@ body {
 	border-radius: 5px;
 	box-shadow: 0 0 50px rgba(20, 26, 106, 0.7);
 	/* height: 80%; */
-	max-width: 800px;
-	height: 800px;
+	max-width: 775px;
+	height: 775px;
 	overflow-y: auto;
 }
 

@@ -31,6 +31,9 @@ const Navigation = () => {
 						Customer <span></span>
 					</NavLink>
 				</li>
+				<li className="navbar-item sakila">
+					<span>Sakila.</span>
+				</li>
 				<li className="navbar-item logo">
 					<img src={logo} alt="Logo" />
 				</li>
