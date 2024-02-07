@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"); /* Import new font */
 
 /* Navigation.css */
 
@@ -76,11 +77,20 @@ body {
 
 .navbar-item.logo {
 	position: absolute;
-	right: 5px;
-	top: 5px;
+	right: 10px;
+	top: 10px;
 }
 
 .navbar-item.logo img {
 	width: 50px;
 	height: auto;
+}
+
+.navbar-item.sakila {
+	float: right;
+	font-family: "Playfair Display", serif; /* Use the new font */
+	font-size: 20px;
+	color: white;
+	padding-right: 55px;
+	/* line-height: 50px; Align with logo */
 }
