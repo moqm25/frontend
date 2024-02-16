@@ -13,12 +13,59 @@ const CustomerPage = () => {
 	const [infoPerPage] = useState(10);
 	const [selectedCustomer, setSelectedCustomer] = useState(null);
 	const [selectedCustomerId, setSelectedCustomerId] = useState(null);
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [customerId, setCustomerId] = useState("");
 
 	useEffect(() => {
-		fetch(`http://localhost:${port}/api/all-customers`)
+		const fetchCustomers = () => {
+			let url = `http://localhost:${port}/api/all-customers`;
+			let params = [];
+
+			if (firstName) {
+				params.push(`first_name=${firstName}`);
+			}
+			if (lastName) {
+				params.push(`last_name=${lastName}`);
+			}
+			if (customerId) {
+				params.push(`customer_id=${customerId}`);
+			}
+
+			if (params.length > 0) {
+				url += "?" + params.join("&");
+			}
+
+			fetch(url)
+				.then((response) => response.json())
+				.then((data) => setCustomers(data));
+		};
+
+		fetchCustomers();
+	}, [firstName, lastName, customerId]);
+
+	const fetchCustomers = () => {
+		let url = `http://localhost:${port}/api/all-customers`;
+		let params = [];
+
+		if (firstName) {
+			params.push(`first_name=${firstName}`);
+		}
+		if (lastName) {
+			params.push(`last_name=${lastName}`);
+		}
+		if (customerId) {
+			params.push(`customer_id=${customerId}`);
+		}
+
+		if (params.length > 0) {
+			url += "?" + params.join("&");
+		}
+
+		fetch(url)
 			.then((response) => response.json())
 			.then((data) => setCustomers(data));
-	}, []);
+	};
 
 	const indexOfLastCustomer = currentPage * customersPerPage;
 	const indexOfFirstCustomer = indexOfLastCustomer - customersPerPage;
@@ -50,6 +97,30 @@ const CustomerPage = () => {
 	return (
 		<div className="container">
 			<h1>Customers</h1>
+			<div className="input-row">
+				<input
+					type="text"
+					placeholder="First Name"
+					value={firstName}
+					onChange={(e) => setFirstName(e.target.value)}
+					className="field-infos"
+				/>
+				<input
+					type="text"
+					placeholder="Last Name"
+					value={lastName}
+					onChange={(e) => setLastName(e.target.value)}
+					className="field-infos"
+				/>
+				<input
+					type="text"
+					placeholder="Customer ID"
+					value={customerId}
+					onChange={(e) => setCustomerId(e.target.value)}
+					className="field-infos"
+				/>
+			</div>
+
 			<table>
 				<thead>
 					<tr>

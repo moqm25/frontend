@@ -10,10 +10,10 @@ const FilmsPage = () => {
 	const [actorLastName, setActorLastName] = useState("");
 	const [genreName, setGenreName] = useState("");
 	const [films, setFilms] = useState([]);
-	const [selectedFilm, setSelectedFilm] = useState(null); // New state variable for the selected film
+	const [selectedFilm, setSelectedFilm] = useState(null);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [filmsPerPage] = useState(20);
-	const [customerId, setCustomerId] = useState(""); // New state variable for the customer ID
+	const [customerId, setCustomerId] = useState("");
 
 	const handleSubmit = () => {
 		let url = `http://localhost:${port}/api/films-genre-actor`;
