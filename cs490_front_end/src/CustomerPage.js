@@ -44,29 +44,6 @@ const CustomerPage = () => {
 		fetchCustomers();
 	}, [firstName, lastName, customerId]);
 
-	const fetchCustomers = () => {
-		let url = `http://localhost:${port}/api/all-customers`;
-		let params = [];
-
-		if (firstName) {
-			params.push(`first_name=${firstName}`);
-		}
-		if (lastName) {
-			params.push(`last_name=${lastName}`);
-		}
-		if (customerId) {
-			params.push(`customer_id=${customerId}`);
-		}
-
-		if (params.length > 0) {
-			url += "?" + params.join("&");
-		}
-
-		fetch(url)
-			.then((response) => response.json())
-			.then((data) => setCustomers(data));
-	};
-
 	const indexOfLastCustomer = currentPage * customersPerPage;
 	const indexOfFirstCustomer = indexOfLastCustomer - customersPerPage;
 	const currentCustomers = customers.slice(
