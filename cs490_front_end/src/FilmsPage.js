@@ -59,24 +59,21 @@ const FilmsPage = () => {
 			.then((response) => response.json())
 			.then((data) => {
 				if (data.Exists) {
-					alert("The film has been rented to the customer.");
-					// Add code here to update the database and rent out the film to the customer
-					// Will need to make a POST request to the server to update the database
-					// make a POST request to the server to update the database
-					// fetch(`http://localhost:${port}/api/rent-film`, {
-					//     method: "POST",
-					//     headers: {
-					//         "Content-Type": "application/json",
-					//     },
-					//     body: JSON.stringify({
-					//         film_id: selectedFilm.film_id,
-					//         customer_id: customerId,
-					//     }),
-					// })
-					//     .then((response) => response.json())
-					//     .then((data) => {
-					//         console.log(data);
-					//     });
+					// Rent the film to the customer
+					fetch(`http://localhost:${port}/api/rent-film`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							customer_id: customerId,
+							inventory_id: selectedFilm.film_id,
+						}),
+					})
+						.then((response) => response.json())
+						.then((data) => {
+							alert(data.message);
+						});
 				} else {
 					alert("Customer was not found.");
 				}
